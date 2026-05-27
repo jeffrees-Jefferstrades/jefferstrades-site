@@ -210,15 +210,21 @@
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       background: radial-gradient(circle, rgba(74,31,168,0.3) 0%, transparent 70%);
-      animation: float 6s ease-in-out infinite;
+      animation: float 4s ease-in-out infinite;
     }
 
     .hero-logo-wrap img {
       width: 300px;
-      filter: drop-shadow(0 0 30px rgba(0,200,255,0.5));
+      filter: drop-shadow(0 0 40px rgba(0,200,255,0.8));
+      animation: glowpulse 4s ease-in-out infinite;
     }
 
-    @keyframes float { 0%,100%{transform:translateY(-50%) translateY(0)} 50%{transform:translateY(-50%) translateY(-18px)} }
+    @keyframes glowpulse {
+      0%,100% { filter: drop-shadow(0 0 30px rgba(0,200,255,0.6)); }
+      50% { filter: drop-shadow(0 0 60px rgba(0,200,255,1)) drop-shadow(0 0 80px rgba(74,31,168,0.8)); }
+    }
+
+    @keyframes float { 0%,100%{transform:translateY(-50%) translateY(0) scale(1)} 50%{transform:translateY(-50%) translateY(-28px) scale(1.04)} }
 
     /* ── STATS BAR ── */
     .stats-bar {
@@ -525,19 +531,20 @@
     .compliance-banner {
       background: rgba(26,10,46,0.95);
       border-bottom: 1px solid rgba(255,180,0,0.25);
-      padding: 0.5rem 5%;
+      padding: 0.4rem 4%;
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: rgba(200,212,232,0.8);
-      line-height: 1.5;
+      line-height: 1.6;
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 101;
-      height: 38px;
+      min-height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.3rem;
     }
     .compliance-banner strong { color: rgba(255,200,0,0.9); }
     .compliance-banner a { color: var(--electric-blue); text-decoration: none; }
@@ -604,8 +611,7 @@
   
   <!-- COMPLIANCE BANNER -->
   <div class="compliance-banner">
-    <strong>⚠️ Risk Warning:</strong> Spread bets and CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 68% of retail investor accounts lose money when trading spread bets and CFDs with IG Markets. You should consider whether you understand how spread bets and CFDs work, and whether you can afford to take the high risk of losing your money.
-    &nbsp;|&nbsp; Jeffers Trades is an Introducing Broker. We are not FCA authorised and do not provide financial advice. <a href="legal.html">Legal & Disclaimers</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a>
+    <strong>⚠️ Risk Warning:</strong> Spread bets and CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. You should consider whether you can afford to take the high risk of losing your money. &nbsp;|&nbsp; Jeffers Trades does not provide financial advice. &nbsp;|&nbsp; <a href="legal.html">Legal & Disclaimers</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a>
   </div>
 
 
