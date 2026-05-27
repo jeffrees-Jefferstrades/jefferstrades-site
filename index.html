@@ -60,6 +60,7 @@
       background: rgba(26,10,46,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,200,255,0.1);
+      transition: top 0.1s;
     }
 
     .nav-logo img {
@@ -816,5 +817,21 @@
     </div>
   </footer>
 
+<script>
+  function adjustNav() {
+    var banner = document.querySelector('.compliance-banner');
+    var nav = document.querySelector('nav');
+    var hero = document.querySelector('.hero');
+    if (banner && nav) {
+      var bannerH = banner.offsetHeight;
+      nav.style.top = bannerH + 'px';
+      if (hero) {
+        hero.style.paddingTop = (bannerH + 72 + 60) + 'px';
+      }
+    }
+  }
+  adjustNav();
+  window.addEventListener('resize', adjustNav);
+</script>
 </body>
 </html>
